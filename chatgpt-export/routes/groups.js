@@ -1,9 +1,3 @@
-const express = require('express');
-const Group = require('../models/Group');
-const { requireAdmin } = require('./adminAuth');
-
-const router = express.Router();
-
 // ...existing code...
 // Admin: create group with default structure/data (template)
 router.post('/with-data', requireAdmin, async (req, res) => {
@@ -61,7 +55,11 @@ router.post('/with-data', requireAdmin, async (req, res) => {
     res.status(500).json({ error: 'Failed to create group with data' });
   }
 });
+const express = require('express');
+const Group = require('../models/Group');
+const { requireAdmin } = require('./adminAuth');
 
+const router = express.Router();
 
 // Helper to ensure a group document has an accessCode.
 // This also backfills codes for existing groups that were created

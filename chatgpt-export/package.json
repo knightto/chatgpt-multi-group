@@ -1,0 +1,21 @@
+{
+  "name": "multi-group-tee-times",
+  "version": "1.0.0",
+  "description": "Multi-group golf tee time manager (Node.js, Express, MongoDB, Resend, Render-ready).",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.0",
+    "express": "^4.19.2",
+    "mongoose": "^8.5.0",
+    "node-cron": "^3.0.3",
+    "resend": "^4.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
