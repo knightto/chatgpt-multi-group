@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Site Admin – Multi-Group Tee Times</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="navbar">
+      <div>
+        <div class="navbar-title">Site Admin</div>
+        <div class="navbar-sub">Manage all groups and global settings.</div>
+      </div>
+      <div>
+        <span class="badge">Admin</span>
+      </div>
+    </header>
+    <main class="main">
+      <section class="card">
+        <div class="section">
+          <h2>Admin Code</h2>
+          <p class="text-muted">
+            The site-wide admin code is required for all actions on this page.
+          </p>
+          <input class="input" id="adminCodeInput" placeholder="Admin code" type="password" />
+        </div>
+
+        <div class="section mt-4">
+          <div class="section-header">
+            <h2>Groups</h2>
+            <button class="button" id="refreshGroupsBtn">Refresh</button>
+          </div>
+          <p class="text-muted mt-1">
+            Share the <strong>Access Code</strong> with players so they can enter from the home page.
+            Use <strong>Group Admin</strong> to manage that specific group's events and subscribers.
+          </p>
+          <div id="groupsTableWrap" class="mt-2 text-muted">Enter admin code and click Refresh.</div>
+        </div>
+
+        <div class="section mt-4">
+          <h3>Create Group</h3>
+          <form id="createGroupForm">
+            <label>
+              Name
+              <input class="input" id="cgName" />
+            </label>
+            <label>
+              Description
+              <input class="input" id="cgDesc" />
+            </label>
+            <label>
+              Template
+              <select id="cgTemplate" class="input">
+                <option value="golf">Golf (default)</option>
+                <option value="default">Default</option>
+                <option value="social">Social</option>
+              </select>
+            </label>
+            <label>
+              Logo URL
+              <input class="input" id="cgLogo" />
+            </label>
+            <button type="submit" class="button">Create Group</button>
+          </form>
+          <div id="createGroupMessage" class="mt-2 text-muted"></div>
+        </div>
+
+        <div class="section mt-4">
+          <h3>Global Notification Settings</h3>
+          <button class="button" id="loadSettingsBtn">Load Settings</button>
+          <div id="settingsWrap" class="mt-2 text-muted">Settings not loaded yet.</div>
+        </div>
+
+        <div class="section mt-4">
+          <h3>Run Empty Tee Reminders</h3>
+          <button class="button" id="runRemindersBtn">Run Now</button>
+          <div id="remindersResult" class="mt-2 text-muted"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="/js/admin.js"></script>
+</body>
+</html>

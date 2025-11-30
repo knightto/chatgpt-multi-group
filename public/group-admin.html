@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Group Admin – Multi-Group Tee Times</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="navbar">
+      <div>
+        <div class="navbar-title" id="gaGroupName">Group Admin</div>
+        <div class="navbar-sub" id="gaGroupDesc"></div>
+      </div>
+      <div>
+        <a href="/home.html" class="button" style="text-decoration:none;">Back Home</a>
+      </div>
+    </header>
+    <main class="main">
+      <section class="card">
+        <div class="section">
+          <h2>Group Info</h2>
+          <div id="groupInfo" class="text-muted">Loading group...</div>
+        </div>
+
+        <div class="section mt-4">
+          <h3>Create Event</h3>
+          <form id="createEventForm">
+            <label>
+              Name
+              <input class="input" id="evName" required />
+            </label>
+            <label>
+              Date/Time
+              <input class="input" id="evDate" type="datetime-local" required />
+            </label>
+            <label>
+              Type
+              <select class="input" id="evType">
+                <option value="teeTime">Tee Time</option>
+                <option value="team">Team</option>
+              </select>
+            </label>
+            <label>
+              Description
+              <input class="input" id="evDesc" />
+            </label>
+            <label>
+              Team size (for team events)
+              <input class="input" id="evTeamSize" type="number" value="4" />
+            </label>
+            <label>
+              Start type
+              <input class="input" id="evStartType" placeholder="straight or shotgun" value="straight" />
+            </label>
+            <button type="submit" class="button">Create Event</button>
+          </form>
+          <div id="createEventMessage" class="mt-2 text-muted"></div>
+        </div>
+
+        <div class="section mt-4">
+          <h3>Events & Tee Times</h3>
+          <div id="adminEvents" class="mt-2 text-muted">Loading events...</div>
+        </div>
+
+        <div class="section mt-4">
+          <h3>Run Empty Tee Reminders (This Group)</h3>
+          <button class="button" id="runGroupRemindersBtn">Run Now</button>
+          <div id="groupRemindersResult" class="mt-2 text-muted"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="/js/group-admin.js"></script>
+</body>
+</html>
